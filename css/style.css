@@ -1,0 +1,41 @@
+.list.card{
+	border-top-left-radius: 20px !important;
+	border-top-right-radius: 20px !important;
+	border-bottom-left-radius: 20px !important;
+	border-bottom-right-radius: 20px !important;
+	margin-top: 40px;
+}
+.item.item-avatar{
+	border-top-left-radius: 20px !important;
+	border-top-right-radius: 20px !important;
+}
+
+.has-header{
+	background-color: #EEEEEE;
+}
+.bar.bar-subheader.item.item-input-inset{
+	background-color: #fff;	
+	
+}
+.item-input-wrapper{
+	background-color: #fff;
+	
+}
+.item.tabs.tabs-secondary.tabs-icon-left{
+	border-bottom-left-radius: 20px !important;
+	border-bottom-right-radius: 20px !important;
+
+}
+.bar-balanced.bar.bar-header.disable-user-behavior{
+	background-color: #009933 !important;
+}
+#footer{
+	background-color: #009933 !important;
+}
+#sobre{
+	background-color: #009933 !important;
+}
+#list{
+      padding: 0px !important;
+      margin: 0px !important;
+  }

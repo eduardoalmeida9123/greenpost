@@ -1,0 +1,99 @@
+<ion-view view-title="Nova Denúncia">
+  	<ion-content>
+  	<form name="usuarioForm">
+		<div class="list">
+			<div class="list list-inset padding">
+				<div class="item item-toggle toggle-large ng-valid" style="">
+					<div> 
+						<span>Anônimo</span>
+					</div>
+					<label class="toggle disable-user-behavior"><input type="checkbox" ng-model="clay" class="ng-pristine ng-untouched ng-valid" ng-click="click()">
+						<div class="track"><div class="handle"></div></div>
+					</label>
+				</div>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Seu nome</span>
+					<input type="text" ng-disabled="disable" ng-model="usuario.nome" name="nome" placeholder="Nome">
+				</label>
+				<label class="item item-input item-floating-label">
+					<span class="input-label">Seu sobrenome</span>
+					<input type="text" ng-disabled="disable" ng-model="usuario.sobrenome" name="sobrenome" placeholder="Sobrenome">
+				</label>
+			</div>
+		</div>
+
+		<style>
+		.item.item-toggle.toggle-large{
+			border: 0px solid !important;
+		}
+		label{
+			border: 0px solid !important;
+		}
+		</style>
+		    <style type="text/css">
+    .item.item-input.item-floating-label{
+      background-color: white !important;
+      border: 0px;
+    }
+    .item.item-toggle.toggle-large{
+      border: 0px;
+    }
+    .list{
+      margin: 10px;
+      background-color: white !important;
+    }
+   .item.item-input{
+      border: 0px;
+     
+    }
+    </style>
+
+
+	    <div class="list list-inset">
+        	<img ng-show="usuario.imagem !== undefined" ng-src="{{usuario.imagem}}">
+        	<center><button class="icon ion-camera button  button-clear" ng-click="takePicture()"></button></center>
+
+		</div>
+
+		<div class="list list-inset">
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Titulo</span>
+				<input type="text" ng-model="usuario.titulo" name="titulo" ng-required="true" ng-minlength="7" placeholder="Titulo da denúncia">
+			</label>
+
+			<label class="item item-input">
+				<textarea placeholder="Denúncia" ng-model="usuario.postagem" name="postagem" ng-required="true" ng-minlength="15" rows="7"></textarea>
+			</label>
+		</div>
+
+		<div class="button-bar padding">
+			<button type="submit" class="button button-assertive" id="upload" ng-click="enviar(usuario)" ng-disabled="!usuario.titulo || !usuario.postagem">Publicar</button>
+		</div>
+		
+
+<!-- 
+		<div class="button-bar bar-positive padding">
+			<button class="icon icon-left ion-social-facebook button button-positive" ng-click="fblogin()">Entre com facebook</button>
+		</div>
+
+		<div class="button-bar bar-positive padding">
+			<button class="icon icon-left ion-social-twitter button button-positive ">Entre com twitter</button>
+		</div>
+	</form>
+-->
+	<!-- Alert -->
+
+	<div ng-if="usuarioForm.titulo.$error.required && usuarioForm.titulo.$dirty" class="list list-inset padding alert alert-danger" style="color: #ef473a; text-align: center !important; ">
+		Por favor preeencha o Título da Denúncia, caso contrário o post não será publicado.
+	</div>
+	<div ng-if="usuarioForm.titulo.$error.minlength" class="list list-inset padding alert alert-danger" style="color: #ef473a; text-align: center !important; ">
+		O Título da denúncia deve ter no mínimo 7 caracteres, caso contrário o post não será publicado.
+	</div>
+	<div ng-if="usuarioForm.postagem.$error.required && usuarioForm.postagem.$dirty" class="list list-inset padding alert alert-danger" style="color: #ef473a; text-align: center !important; ">
+	Por favor preeencha o campo da Denúncia, caso contrário o post não será publicado.
+	</div>
+	<div ng-if="usuarioForm.postagem.$error.minlength" class="list list-inset padding alert alert-danger" style="color: #ef473a; text-align: center !important; ">
+	O Denúncia deve ter no mínimo 15 caracteres, caso contrário o post não será publicado.
+	</div>
+	</ion-content>
+</ion-view>
