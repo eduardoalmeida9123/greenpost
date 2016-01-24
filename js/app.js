@@ -17,3 +17,4 @@ app.run(function($ionicPlatform) {
     initPushwoosh();
   });
 })
+

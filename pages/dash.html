@@ -46,6 +46,8 @@
       border: 0px;
      
     }
+
+
     </style>
 
 
@@ -54,6 +56,12 @@
         	<center><button class="icon ion-camera button  button-clear" ng-click="takePicture()"></button></center>
 
 		</div>
+
+		<div class="list list-iset">
+			<label class="item item-input item-floating-label">
+				<label>Endereço:  <strong ng-model="usuario.local"><input type="text" value="{{usuario.local}}" name="local"></input></strong></label>
+			</div>
+		</label>
 
 		<div class="list list-inset">
 			<label class="item item-input item-floating-label">
